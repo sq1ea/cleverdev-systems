@@ -1,0 +1,1 @@
+![cleverdev-systems](system-design/cleverdev-systems.jpg)

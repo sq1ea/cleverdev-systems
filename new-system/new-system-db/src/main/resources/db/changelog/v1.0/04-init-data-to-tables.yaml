@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: load_initial_data
+      author: Pavel_Zhykhar
+      changes:
+        - sqlFile:
+            path: db\changelog\v1.0\sql\init_data_to_tables.sql
+            relativeToChangelogFile: false
+            endDelimiter: ";"
+            splitStatements: true
+            stripComments: true

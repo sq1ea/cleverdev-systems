@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_company_user_table
+      author: Pavel_Zhykhar
+  - include:
+      file: db\changelog\v1.0\01-create-client-table.yaml
+
+  - changeSet:
+      id: create_patient_profile
+      author: Pavel_Zhykhar
+  - include:
+      file: db\changelog\v1.0\02-create-note-table.yaml
+
+  - changeSet:
+      id: init_db_data
+      author: Pavel_Zhykhar
+  - include:
+      file: db\changelog\v1.0\03-init-data-to-tables.yaml

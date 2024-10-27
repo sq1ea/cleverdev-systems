@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_note_table
+      author: Pavel_Zhykhar
+      changes:
+        - createTable:
+            tableName: note
+            columns:
+              - column:
+                  name: note_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: agency
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: client_guid
+                  type: UUID
+                  constraints:
+                    nullable: false
+              - column:
+                  name: comments
+                  type: text
+              - column:
+                  name: created_date_time
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modified_date_time
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: logged_user
+                  type: varchar(255)
+        - addForeignKeyConstraint:
+            baseTableName: note
+            baseColumnNames: client_guid
+            referencedTableName: client
+            referencedColumnNames: guid
+            constraintName: fk_note_client
